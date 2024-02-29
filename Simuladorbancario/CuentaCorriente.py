@@ -15,8 +15,5 @@ class CuentaCorriente:
     def ConsultarSaldocorriente(self):
         return "Su Saldo es" + self.Saldo()
     
-    def retirartodo(self):
-        return self.Saldo-self.Saldo
-    
     def retirar(self,monto):
         self.Saldo -= monto

@@ -16,9 +16,6 @@ class CuentaAhorros:
     def retirar(self,monto):
         return self-monto
 
-    def retirartodo(self):
-        return self.saldo-self.saldo
-    
     def consignar(self,monto):
         return self.saldo+monto
     

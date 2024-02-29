@@ -34,7 +34,21 @@ class SimiladorBancario:
         self.ahorros.retirar(self.ahorros.ConsultarSaldoAhorros)
 
     def consultarsaldocorriente(self):
-        return self.corriente.ConsultarSaldocorriente
+        return "su saldo es " + self.corriente.ConsultarSaldocorriente
     
-    def retirartotal(self):
-        return (self.ahorros.retirartodo+self.corriente.retirartodo)
+    def Duplicarahorro(self):
+        self.ahorros.ConsultarSaldoAhorros(self.ahorros.ConsultarSaldoAhorros())
+    
+    # forma 1
+    def retirartodo(self):
+        total = self.ConsultarSaldoTotal()
+        self.ahorros.retirar(self.ahorros.ConsultarSaldoAhorros)
+        self.corriente.retirar(self.corriente.ConsultarSaldocorriente)
+        return "retiraste total:"+total
+
+    #forma 2
+    # def retirartotal(self):
+    #     self.consignardeahorrosacorriente
+    #     self.corriente.retirar(self.corriente.ConsultarSaldocorriente)
+
+    #     return ""
