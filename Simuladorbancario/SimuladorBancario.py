@@ -24,19 +24,17 @@ class SimiladorBancario:
     -------------------------------------"""
 
     def comsignarcuentacorriente(self,monto):
-        return self.corriente.Consignar(monto)
+        self.corriente.Consignar(monto)
 
     def ConsultarSaldoTotal(self):
         return "su saldo total es" +(self.ahorros.saldo+self.corriente.Saldo)
     
     def consignardeahorrosacorriente(self):
-        return (self.ahorros.retirar + self.corriente.Consignar)
-    
+        self.corriente.Consignar(self.ahorros.ConsultarSaldoAhorros)
+        self.ahorros.retirar(self.ahorros.ConsultarSaldoAhorros)
+
     def consultarsaldocorriente(self):
         return self.corriente.ConsultarSaldocorriente
     
     def retirartotal(self):
         return (self.ahorros.retirartodo+self.corriente.retirartodo)
-    
-    def duplicarahorro(self):
-        return 
