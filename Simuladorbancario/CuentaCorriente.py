@@ -10,7 +10,7 @@ class CuentaCorriente:
     -----------------------------------"""
 
     def Consignar(self, monto):
-        return self.Saldo+monto
+        self.Saldo += monto
     
     def ConsultarSaldocorriente(self):
         return "Su Saldo es" + self.Saldo()
@@ -19,4 +19,4 @@ class CuentaCorriente:
         return self.Saldo-self.Saldo
     
     def retirar(self,monto):
-        return self.Saldo-monto
+        self.Saldo -= monto
