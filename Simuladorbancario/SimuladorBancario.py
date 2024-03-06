@@ -10,6 +10,12 @@ class SimiladorBancario:
     cedula=0
     nombre=""
     mesactual=0
+
+    """-------------------------------------
+    # 1=normal, 2=platino y 3=VIP
+    -------------------------------------"""
+
+    tipocliente=0
     
     """-------------------------------------
     #Asociaciones
@@ -22,6 +28,20 @@ class SimiladorBancario:
     """-------------------------------------
     #Metodos
     -------------------------------------"""
+
+    def retirarmonto(self, monto):
+        descuento = monto * 0.01
+        self.saldo -= monto
+        self.saldo -= descuento
+
+    def cambiartipocliente(self, ntipocliente):
+        self.tipocliente = ntipocliente
+
+    def __init__(cedula, nombre, mesactual, tipocliente):
+        self.cedula = cedula
+        self.nombre = nombre
+        self.mesactual = mesactual
+        self.tipocliente = tipocliente
 
     def comsignarcuentacorriente(self,monto):
         self.corriente.Consignar(monto)

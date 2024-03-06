@@ -13,7 +13,8 @@ class Empleado:
     ----------------------------"""
     
     sexo = 0
-    salario = 1500000
+    salario = 0
+    numeroHijOs = 0
 
     """----------------------------
     # Asociaciones
@@ -25,6 +26,21 @@ class Empleado:
     """----------------------------
     # Metodos
     ----------------------------"""
+
+    def calculardiferenciasalarial(self,otroempleado):
+        diferenciasalarial = self.salario - otroempleado
+        return """La Diferencia Ssalarial es""" + diferenciasalarial
+
+    def calcularauxilioeducativo(self,porcentaje):
+        auxilioeducativo = (porcentaje*self.salario) * self.numeroHijos
+        return """Su Auxilio educativo es""" + auxilioeducativo
+
+    # def calcularauxilioeducativo(self):
+    #     auxilioeducativo = (0,05 * self.salario) * self.numeroHijos 
+    #     return """Su Auxilio educativo es""" + auxilioeducativo
+
+    def Consultarnumerohijos(self):
+        return self.numeroHijos
 
     def cambiarsalario(self, nuevoSalario):
         # Aqui va el codigo del metodo cambiar salario
@@ -76,3 +92,10 @@ class Empleado:
         #Aqui
         total= self.CalcularSalarioAnual()
         return (total*19.5)/100
+    
+    def __init__(self, nombre, apellido, sexo, salario):
+        self.nombre = nombre
+        self.apellido = apellido
+        self.sexo = sexo
+        self.salario = salario
+        
